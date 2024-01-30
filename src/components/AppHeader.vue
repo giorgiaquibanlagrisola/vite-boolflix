@@ -1,7 +1,10 @@
 <script>
+import { store } from '../store.js';
+
 export default {
     data() {
         return {
+            store
 
         };
     },
@@ -13,7 +16,10 @@ export default {
 
 <template>
     <header>
-        HEADER
+        <input v-model="store.searchText" type="text" placeholder="Nome di un film...">
+        <button @click="$emit('startSearch')">
+            Cerca
+        </button>
     </header>
 </template>
 
